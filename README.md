@@ -38,6 +38,12 @@ From `backend/`:
 npm install
 ```
 
+Create local env file from example:
+
+```bash
+cp .env.example .env
+```
+
 Create or update `backend/.env`:
 
 ```env
