@@ -101,6 +101,16 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is running' });
 });
 
+// Root endpoint for hosted backend checks.
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'MediChain backend is running',
+    health: '/health',
+    apiBase: '/api/v1'
+  });
+});
+
 // Error handling middleware
 app.use(errorHandler);
 
