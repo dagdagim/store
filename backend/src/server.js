@@ -28,6 +28,9 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
+// Required on hosted platforms (Render/Railway/etc.) behind reverse proxies.
+app.set('trust proxy', 1);
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,

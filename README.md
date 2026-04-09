@@ -81,6 +81,30 @@ API base URL:
 Health check:
 - `http://localhost:5000/health`
 
+## Backend Hosting (Render)
+
+This repo now includes `render.yaml` at root for backend hosting.
+
+Steps:
+
+1. Push latest code to GitHub (already done).
+2. In Render, choose `New +` -> `Blueprint` and select this repo.
+3. Render will detect `render.yaml` and create `medichain-backend`.
+4. Set secret env values in Render for:
+  - `MONGODB_URI`
+  - `JWT_SECRET`
+  - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
+  - `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`
+  - `EMAIL_USER`, `EMAIL_PASS` (and `EMAIL_HOST` if not Gmail)
+5. Deploy and verify health endpoint:
+  - `https://<your-render-service>.onrender.com/health`
+
+Then point Flutter Web build to hosted backend API:
+
+```bash
+flutter build web --release --base-href /store/ --dart-define=API_BASE_URL=https://<your-render-service>.onrender.com/api/v1
+```
+
 ## 2) Flutter App Setup
 
 From `store/`:
