@@ -40,6 +40,9 @@ jobs:
       - name: Add SPA fallback for GitHub Pages
         run: cp build/web/index.html build/web/404.html
 
+      - name: Disable Jekyll processing
+        run: touch build/web/.nojekyll
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -47,3 +50,4 @@ jobs:
           publish_dir: store/build/web
           publish_branch: gh-pages
           force_orphan: true
+          keep_files: false
