@@ -140,13 +140,13 @@ Priority used by workflow:
 
 1. `secrets.FRONTEND_API_BASE_URL`
 2. `vars.FRONTEND_API_BASE_URL`
-3. Default: `https://medichain-backend.onrender.com/api/v1`
+3. Default: `https://medichain-backend.onrender.com/api`
 
 Set this in GitHub:
 
 1. Repo `Settings` -> `Secrets and variables` -> `Actions`
 2. Add secret or variable: `FRONTEND_API_BASE_URL`
-3. Value example: `https://<your-render-service>.onrender.com/api/v1`
+3. Value example: `https://<your-render-service>.onrender.com/api`
 
 ## 3) App Icon
 
