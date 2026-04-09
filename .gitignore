@@ -1,0 +1,19 @@
+# Root ignore rules
+
+# Node backend
+backend/node_modules/
+backend/uploads/
+backend/.env
+
+# Flutter / Dart
+store/.dart_tool/
+store/build/
+store/.flutter-plugins
+store/.flutter-plugins-dependencies
+store/.packages
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
