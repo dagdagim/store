@@ -132,6 +132,22 @@ If backend is running on a different host/port, override API URL at build/run ti
 flutter run --dart-define=API_BASE_URL=http://localhost:5000/api/v1
 ```
 
+## Frontend Hosting API Binding (GitHub Pages)
+
+The GitHub Actions workflow builds web with `--dart-define=API_BASE_URL=...`.
+
+Priority used by workflow:
+
+1. `secrets.FRONTEND_API_BASE_URL`
+2. `vars.FRONTEND_API_BASE_URL`
+3. Default: `https://medichain-backend.onrender.com/api/v1`
+
+Set this in GitHub:
+
+1. Repo `Settings` -> `Secrets and variables` -> `Actions`
+2. Add secret or variable: `FRONTEND_API_BASE_URL`
+3. Value example: `https://<your-render-service>.onrender.com/api/v1`
+
 ## 3) App Icon
 
 Launcher icon is configured via `flutter_launcher_icons` in `store/pubspec.yaml`.
